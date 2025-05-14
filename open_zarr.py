@@ -9,7 +9,7 @@ import argparse
 def open_zarr_with_xarray_in_ipython(zarr_path):
     """Opens the specified Zarr store using xarray in an interactive IPython session."""
     try:
-        command = f"ipython -i -c \"import xarray as xr; ds = xr.open_zarr('{zarr_path}'); print(f'Opened Zarr dataset: {{ds}}'); print('Zarr dataset \\'ds\\' is now available. Keep this IPython session running to explore.')\""
+        command = f"ipython -i -c \"import xarray as xr; from matplotlib import pyplot as plt; ds = xr.open_zarr('{zarr_path}'); print(f'Opened Zarr dataset: {{ds}}'); print('Zarr dataset \\'ds\\' is now available. Keep this IPython session running to explore.')\""
         subprocess.run(command, shell=True, check=True)
         print(
             f"Opened Zarr file: {zarr_path} with xarray in an interactive IPython session."
